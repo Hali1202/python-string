@@ -1,0 +1,74 @@
+def e1():
+	for i in range(11):
+		print(i)
+def e2():
+	n = int(input('enter number: '))
+	a = 0
+
+	for i in range(1,n+1):
+		a += i
+	print(f'sum from 1 to {n}: {a}')
+def e3():
+	n = int(input('enter number: '))
+	a = 0
+	b = 0
+
+	for i in range(1,n+1):
+		if i % 2 == 0:
+			a += i
+		elif i % 2 != 0:
+			b += i
+
+	print(f'sum evens from 1 to {n}: {a}')
+	print(f'sum odds from 1 to {n}: {b}')
+def e4():
+	a = input('enter text: ')
+	b = ('a','u','i','o','e')
+	c = 0
+
+	for char in a:
+		if char in b:
+			c += 1
+
+	print(f'a has {c} vowels')
+def e5():
+	a = input('enter text: ')
+	b = a.split()
+	c = 0
+	for char in b:
+		c += 1
+	print(f'the text has {c} words')
+def e6():
+	import random
+	num = random.randint(1,100)
+	print(num)
+	select = int(input('1-easy 2-medium 3-hard, enter number to select: '))
+
+	if select == 3:
+		print(f'you have 4 times')
+	elif select == 2:
+		print(f'you have 6 times')
+	elif select == 1:
+		print(f'you have 10 times')
+
+	if select == 1:
+		chance = 10
+	else:
+		if select == 2:
+			chance = 5
+		else:
+			chance = 4
+
+	for i in range(chance):
+		guess = int(input('guess number from 1-100: '))
+		if num == guess:
+			print('correct')
+			break
+		else:
+			if num > guess:
+				print('your number less than computer')
+			else:
+				print('your number greater than computer')
+
+if __name__ == '__main__':
+	e6()
